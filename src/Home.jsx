@@ -4,7 +4,7 @@ import phone from './assets/phone.jpg'
 import tshirt from './assets/tshirt.jpg'
 import shoe from './assets/shoe.webp'
 import coat from './assets/coat.jpg'
-import Joggers from './assets/Joggers.jpg'
+import joggers from './assets/joggers.jpg'
 import mac from './assets/mac.jpg'
 import tablet from './assets/tablet.jpg'
 import bed from './assets/bed.jpg'
@@ -44,7 +44,7 @@ export default function Home() {
         fimg: coat,
         fname: "Premium Coat",
         fprice: "$2500",
-        fimg2: Joggers,
+        fimg2: joggers,
         fname1: "Joggers",
         fprice1: "$500",
     }, {
