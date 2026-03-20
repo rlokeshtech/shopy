@@ -1,6 +1,4 @@
-// useEffect(() => {
-//     setTotal(handle + total )
-// },[cart])
+
 import { useContext, useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import img1 from './assets/bgimage.jpg'

@@ -1,5 +1,4 @@
 import { useNavigate, Link } from "react-router-dom"
-import img1 from './assets/bgimage.jpg'
 import headphone from './assets/headphone.jpg'
 import phone from './assets/phone.jpg'
 import tshirt from './assets/tshirt.jpg'
