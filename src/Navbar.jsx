@@ -3,12 +3,12 @@ export default function Navbar(){
     const navigate = useNavigate()
     return(
         <>
-        <header className="flex justify-between items-center px-10 py-5 bg-white shadow-md">
+        <header className="flex justify-between items-center px-10 py-5 bg-gradient-to-br from-slate-900 via-black-900 to-gray-800 text-white">
                         <div>
                             <p className="text-2xl font-bold text-indigo-600"><Link to="/">Shopy</Link></p>
                         </div>
         
-                        <div className="flex gap-8 font-medium text-gray-700">
+                        <div className="flex gap-8 font-medium text-white-700">
                             <Link to="/" className="hover:text-indigo-600 transition">Home</Link>
                             <Link to="/products" className="hover:text-indigo-600 transition">Products</Link>
                             <Link to="/about" className="hover:text-indigo-600 transition">Cart</Link>
@@ -20,6 +20,7 @@ export default function Navbar(){
                             </button>
                         </div>
                     </header>
+
         </>
     )
 }
