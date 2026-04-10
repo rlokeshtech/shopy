@@ -9,7 +9,7 @@ import mac from './assets/mac.jpg'
 import tablet from './assets/tablet.jpg'
 import bed from './assets/bed.jpg'
 import sofa from './assets/sofa.jpg'
-import Navbar from "./Navbar"
+import image from "./assets/homeimg.png"
 import Footer from "./footer"
 
 export default function Home() {
@@ -69,127 +69,131 @@ export default function Home() {
     ]
 
     return (
-        <div className="bg-gradient-to-br from-slate-900 via-gray-900 to-black min-h-screen text-white">
-            <Navbar/>
+        <div className="bg-[#f4f8fb] min-h-screen text-gray-800 font-sans">
 
             {/* HERO SECTION */}
             <section>
-                <div className="h-[520px]   bg-[url(./assets/bgimage.jpg)] bg-cover bg-center flex flex-col justify-center px-15 shadow-2xl border border-gray-800 backdrop-blur">
+                <div className="h-[560px] bg-gradient-to-r from-[#2c8fa3] to-[#6ec6d9] flex flex-col justify-center px-16">
+                    <div className="flex justify-around">
+                        <div className="pt-30">
+                            <h3 className="text-white/80 text-sm font-medium tracking-wide mb-3">
+                                Curated for Clarity
+                            </h3>
 
-                    <h3 className="text-gray-900 text-lg font-semibold mb-2 tracking-wide">New Collection</h3>
+                            <h1 className="text-5xl font-semibold text-white leading-tight mb-4">
+                                Elegance in <span className="italic font-light">Fluidity.</span>
+                            </h1>
 
-                    <h1 className="text-6xl font-extrabold mb-4 leading-tight">
-                        Upgrade your Lifestyle
-                    </h1>
+                            <h2 className="max-w-lg text-white/80 mb-8 text-base leading-relaxed">
+                                Discover refined products designed to bring calm, balance,
+                                and sophistication into your daily lifestyle.
+                            </h2>
 
-                    <h2 className="max-w-xl text-gray-900 mb-6 text-lg">
-                        Discover exclusive deals on the latest high-end electronics
-                        and designer fashion. Limited time offers only.
-                    </h2>
+                            <div className="flex gap-4">
+                                <button
+                                    onClick={() => navigate("/products ")}
+                                    className="px-6 py-2.5 rounded-full bg-white text-[#2c8fa3] font-medium hover:bg-gray-100 transition">
+                                    Shop Collection
+                                </button>
 
-                    <div className="flex gap-4">
-                        <button
-                            onClick={()=>navigate("/products ")}
-                            className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:scale-105 transition transform shadow-lg font-semibold">
-                            Shop Now
-                        </button>
-
-                        <button
-                            onClick={()=>navigate("/products ")}
-                            className="px-6 py-3 rounded-xl border border-gray-400 hover:bg-white hover:text-black transition">
-                            View Deals
-                        </button>
+                                <button
+                                    onClick={() => navigate("/products ")}
+                                    className="px-6 py-2.5 rounded-full border border-white/60 text-white hover:bg-white hover:text-[#2c8fa3] transition">
+                                    Our Story
+                                </button>
+                            </div>
+                        </div>
+                        <div className="">
+                            <img className="rounded-tl-[80px] rounded-br-[80px] rounded-tr-xl rounded-bl-xl rotate-3" src={image} alt="" />
+                        </div>
                     </div>
-
                 </div>
             </section>
 
             {/* DEAL HEADER */}
-            <section className="flex justify-between items-center mx-10 mt-14">
+            <section className="flex justify-between items-center mx-16 mt-16">
                 <div>
-                    <p className="text-3xl font-bold">Deals of the Day</p>
-                    <p className="text-gray-400">Hurry Up! Offers Close Soon</p>
+                    <p className="text-2xl font-semibold">Editorial Picks</p>
+                    <p className="text-gray-500 text-sm">Timeless pieces curated for you</p>
                 </div>
 
-                <div className="rounded-xl w-30 h-8 text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-base text-sm px-3 py-1.5 text-center leading-5">
-                    Limited Time
+                <div className="text-sm px-4 py-1 rounded-full bg-[#e0f4f8] text-[#2c8fa3]">
+                    Featured
                 </div>
             </section>
 
             {/* PRODUCT LIST */}
-            <section className="flex justify-center flex-wrap gap-8 mt-10 px-10">
-
+            <section className="flex justify-center flex-wrap gap-10 mt-12 px-10">
                 {items.map((value, index) => (
                     <div
                         key={index}
-                        className="bg-gray-800/60 backdrop-blur-lg rounded-2xl p-4 text-center w-56 hover:scale-105 transition duration-300 shadow-xl border border-gray-700 inset-shadow-sm inset-shadow-indigo-500 ">
+                        className="bg-white rounded-2xl p-4 w-64 hover:shadow-lg transition duration-300">
 
-                        <img
-                            src={value.image}
-                            className="w-full h-44 object-cover rounded-xl mb-3"
-                            alt=""
-                        />
-
-                        <p className="font-semibold text-lg capitalize">{value.name}</p>
-
-                        <p className="text-cyan-400 font-bold text-lg">
+                        {/* IMAGE CONTAINER (IMPORTANT FOR ZOOM) */}
+                        <div className="w-full h-40 overflow-hidden rounded-xl">
+                            <img
+                                src={value.image}
+                                className="w-full h-full object-contain transition-transform duration-500 ease-in-out hover:scale-110"
+                                alt=""
+                            />
+                        </div>
+                        <p className="font-medium text-base mt-4 mb-1">
+                            {value.name}
+                        </p>
+                        <p className="text-[#2c8fa3] font-semibold text-sm mb-1">
                             {value.price}
                         </p>
-
-                        <p className="text-yellow-400 text-sm">
+                        <p className="text-gray-400 text-xs">
                             ⭐ {value.Rating}
                         </p>
                     </div>
                 ))}
-
             </section>
-
             {/* CATEGORY SECTION */}
-            <section className="mt-20">
-                <div className="mx-10 flex justify-between items-center ">
-                    <h3 className="text-3xl font-bold">
-                        Explore Categories
+            <section className="mt-24">
+                <div className="mx-16 flex justify-between items-center">
+                    <h3 className="text-2xl font-semibold">
+                        Curated Categories
                     </h3>
-                    <h4 className="text-cyan-400 font-semibold cursor-pointer hover:underline">
-                        <Link to="/products">View All Categories</Link>
+                    <h4 className="text-[#2c8fa3] text-sm cursor-pointer hover:underline">
+                        <Link to="/products">View All</Link>
                     </h4>
                 </div>
-
-                <div className="flex justify-center flex-wrap gap-10 mt-10 mb-10 px-10 ">
+                <div className="flex justify-center flex-wrap gap-8 mt-10 mb-16 px-16">
                     {catego.map((value, index) => (
                         <div
                             key={index}
-                            className="bg-gray-800/70 backdrop-blur-lg w-80 rounded-2xl shadow-xl p-6 border border-gray-700 hover:scale-105 transition inset-shadow-sm inset-shadow-indigo-500">
-
-                            <p className="text-xl font-semibold mb-4 text-cyan-400">
+                            className="bg-white w-80 rounded-2xl p-5 hover:shadow-lg transition">
+                            <p className="text-lg font-medium mb-4 text-[#2c8fa3]">
                                 {value.category}
                             </p>
-
-                            <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-700 transition">
-                                <img
-                                    src={value.fimg}
-                                    className="w-16 h-16 object-cover rounded-lg"
-                                    alt=""/>
+                            <div className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-50 transition">
+                                <div className="w-14 h-14 overflow-hidden rounded-md">
+                                    <img
+                                        src={value.fimg}
+                                        className="w-full h-full object-contain transition-transform duration-500 hover:scale-110"
+                                        alt=""
+                                    />
+                                </div>
                                 <div>
-                                    <p className="font-medium">
-                                        {value.fname}
-                                    </p>
-                                    <p className="text-cyan-400 font-semibold">
+                                    <p className="text-sm">{value.fname}</p>
+                                    <p className="text-[#2c8fa3] text-sm font-medium">
                                         {value.fprice}
                                     </p>
                                 </div>
                             </div>
 
-                            <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-700 transition mt-4">
-                                <img
-                                    src={value.fimg2}
-                                    className="w-16 h-16 object-cover rounded-lg"
-                                    alt=""/>
+                            <div className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-50 transition mt-3">
+                                <div className="w-14 h-14 overflow-hidden rounded-md">
+                                    <img
+                                        src={value.fimg2}
+                                        className="w-full h-full object-contain transition-transform duration-500 hover:scale-110"
+                                        alt=""
+                                    />
+                                </div>
                                 <div>
-                                    <p className="font-medium">
-                                        {value.fname1}
-                                    </p>
-                                    <p className="text-cyan-400 font-semibold">
+                                    <p className="text-sm">{value.fname1}</p>
+                                    <p className="text-[#2c8fa3] text-sm font-medium">
                                         {value.fprice1}
                                     </p>
                                 </div>
@@ -197,12 +201,11 @@ export default function Home() {
 
                         </div>
                     ))}
-
                 </div>
 
             </section>
 
-            <Footer/>
+            <Footer />
 
         </div>
     )
